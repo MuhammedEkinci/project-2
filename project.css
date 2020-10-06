@@ -1,0 +1,11 @@
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
+}
+*  {
+    font: inherit;
+}
+#meme-canvas{
+width: 300ox;
+}
