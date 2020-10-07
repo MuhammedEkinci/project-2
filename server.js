@@ -1,16 +1,31 @@
+  
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
 var express = require("express");
+<<<<<<< HEAD
 var session = require("express-session");
 var PORT = process.env.PORT || 8080;
 
+=======
+
+// Sets up the Express App
+// =============================================================
+>>>>>>> origin
 var app = express();
+var PORT = process.env.PORT || 8080;
 
-// Serve static content for the app from the "public" directory in the application directory.
-app.use(express.static("public"));
+// Requiring our models for syncing
+var db = require("./models");
 
-// Parse application body as JSON
+// Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+<<<<<<< HEAD
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
@@ -21,9 +36,20 @@ app.set("view engine", "handlebars");
 var routes = require("./routes/memeController");
 
 app.use(routes);
+=======
+// Static directory
+app.use(express.static("public"));
+>>>>>>> origin
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
+// Routes
+// =============================================================
+require("./routes/html-routes.js")(app);
+require("./routes/meme-like-routes.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
