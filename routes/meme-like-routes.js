@@ -1,1 +1,1 @@
-            
+//when a ameme is liked it will go to memeliked.html page

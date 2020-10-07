@@ -1,5 +1,8 @@
 #web-title {
     color: black;
-    float: left;
+    margin-left: 100px;
 }
 
+.profile-btn {
+    float: right;
+}
