@@ -1,5 +1,10 @@
 #web-title {
     color: black;
-    float: left;
+   text-align: center;
+   padding-right: 350px;
+   padding-left: 350px;
 }
-
+.navbar {
+    text-align: center;
+    justify-content: center;
+}

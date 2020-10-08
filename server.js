@@ -6,15 +6,9 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-<<<<<<< HEAD
-var session = require("express-session");
-var PORT = process.env.PORT || 8080;
-
-=======
 
 // Sets up the Express App
 // =============================================================
->>>>>>> origin
 var app = express();
 var PORT = process.env.PORT || 8080;
 
@@ -25,21 +19,8 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-<<<<<<< HEAD
-// Set Handlebars.
-var exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
-
-// Import routes and give the server access to them.
-var routes = require("./routes/memeController");
-
-app.use(routes);
-=======
 // Static directory
 app.use(express.static("public"));
->>>>>>> origin
 
 // Routes
 // =============================================================
