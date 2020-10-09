@@ -8,18 +8,17 @@ module.exports = function(app) {
 
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loadshomepage.html
+  // index route loads homepage.handlebars
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/homepage.html"));
+    res.sendFile(path.join(__dirname, "../views/homepage.handlebars"));
   });
 
   app.get("/create", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/createMeme.html"));
+    res.sendFile(path.join(__dirname, "../views/createMeme.handlebars"));
   });
 
   app.get("/liked", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/likedMemes.html"));
+    res.sendFile(path.join(__dirname, "../views/likedMemes.handlebars"));
   });
 
-  //load 
 };
