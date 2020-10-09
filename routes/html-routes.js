@@ -10,15 +10,15 @@ module.exports = function(app) {
 
   // index route loads homepage.handlebars
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/homepage.handlebars"));
+    res.render( "../views/homepage.handlebars");
   });
 
   app.get("/create", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/createMeme.handlebars"));
+    res.reder("../views/createMeme.handlebars");
   });
 
   app.get("/liked", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/likedMemes.handlebars"));
+    res.render("../views/likedMemes.handlebars");
   });
 
 };

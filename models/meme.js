@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 //creating likedMemes model
 module.exports = function(sequalize, DataTypes) {
-    var likedMemes = sequalize.define("likedMeme", {
+    var LikedMemes = sequalize.define("likedMeme", {
         meme: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -11,5 +11,5 @@ module.exports = function(sequalize, DataTypes) {
             }
         }
     });
-    return likedMemes;
+    return LikedMemes;
 };

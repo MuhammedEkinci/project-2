@@ -3,7 +3,7 @@ var db = require("../models");
 
 module.exports = function(app) {
     app.get("/api/likedMemes", function(req, res) {
-        db.likedMemes.findAll({}).then(function(data) {
+        db.LikedMemes.findAll({}).then(function(data) {
             res.json(data);
         })
     });
