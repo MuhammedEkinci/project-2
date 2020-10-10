@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
-    var User = sequelize.define("profile", {
+    var User = sequelize.define("User", {
         username: DataTypes.STRING,
-        validate: {
-            len: [1]
-        }
+        // validate: {
+        //     length: [1]
+        // }
     });
 
     User.associate = function(models) {

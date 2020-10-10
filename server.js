@@ -19,7 +19,7 @@ app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
+//require("./routes/user-api-routes.js")(app);
 require("./routes/meme-like-routes.js")(app);
 //require("./routes/create-meme-routes")(app);
 

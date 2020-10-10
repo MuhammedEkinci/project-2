@@ -1,4 +1,4 @@
-const { DataTypes } = require("sequelize");
+
 
 //creating likedMemes model
 module.exports = function(sequalize, DataTypes) {

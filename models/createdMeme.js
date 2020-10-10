@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-    var CreatedMeme = sequelize.define("created_memes", {
+    var CreatedMeme = sequelize.define("CreatedMeme", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -34,4 +34,5 @@ module.exports = function(sequelize, DataTypes) {
             }
         })
     }
+    return CreatedMeme;
 }
