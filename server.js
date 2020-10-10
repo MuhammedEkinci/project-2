@@ -1,7 +1,6 @@
 
 // Requiring necessary npm packages
 var express = require("express");
-var session = require("express-session");
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -21,6 +20,7 @@ app.set("view engine", "handlebars");
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/meme-like-routes.js")(app);
+//require("./routes/create-meme-routes")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(function() {
