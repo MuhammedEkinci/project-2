@@ -1,14 +1,18 @@
 $(document).ready(function() {
     let memeURL = "https://api.imgflip.com/get_memes";
-  
+
+    $(document).on('click','.meme-img', doSomething)
+
     fetch(memeURL)
     .then(data => data.json())
     .then(json => {
       console.log(json);
+
+      const memes = json.data.memes;
   
       for(var i = 0; i < 30; i++) {
         //stores all memes retrieved form API
-        var popMemesDiv = $("<a class = 'meme-display col-lg-2' onclick = doSomething()>");
+        var popMemesDiv = $("<a class = 'meme-display col-lg-2' >");
   
   
         //get meme img from API
@@ -23,12 +27,10 @@ $(document).ready(function() {
         //prepend to memes div
         $(".meme-choices").prepend(popMemesDiv);
       }
-  
     })
     .catch(error => console.log(error));
 
-
     function doSomething() {
-        console.log("did something!!!");
+        console.log("message");
     }
   });
