@@ -10,23 +10,23 @@ module.exports = function(app) {
 
   // index route loads homepage.handlebars
   app.get("/", function(req, res) {
-    res.render( "../views/homepage.handlebars");
+    res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
   //create route loads createMeme.handlebars
   app.get("/create", function(req, res) {
-    res.reder("../views/createMeme.handlebars");
+    res.sendFile(path.join(__dirname, "../public/createMemes.html"));
   });
 //liked route loads likedMemes.handlebars
   app.get("/liked", function(req, res) {
-    res.render("../views/likedMemes.handlebars");
+    res.sendFile(path.join(__dirname, "../public/likeMemes.html"));
   });
 //memes route loads likedMemes.handlebars
   app.get("/memes", function(req, res) {
-    res.render( "../views/homepage.handlebars");
+    res.sendFile(path.join(__dirname, "../public/homepage.html"));
   });
   //users route loads likedMemes.handlebars
   app.get("/users", function(req, res) {
-    res.render( "../views/user-manage.handlebars");
+    res.sendFile(path.join(__dirname, "../public/user-manage.html"));
   });
 
 };

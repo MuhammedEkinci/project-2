@@ -18,7 +18,7 @@ module.exports = function(app) {
     });
 
     app.get("/api/likedMemes/:id", function(req, res) {
-        db.CreatedMeme.fincdOne({
+        db.LikedMemes.fincdOne({
             where: {
                 id: req.params.id
             },
@@ -31,14 +31,14 @@ module.exports = function(app) {
 
       //POST route for saving a new Liked Meme
       app.post("/api/likedMeme", function(req, res) {
-        db.CreatedMeme.create(req.body).then(function(dbLiked) {
+        db.LikedMemes.create(req.body).then(function(dbLiked) {
             res.json(dbLiked);
         });
     });
 
     // DELETE route for deleting liked Memes
     app.delete("/api/likedMemes/:id", function(req, res) {
-        db.CreatedMeme.destroy({
+        db.LikedMemes.destroy({
         where: {
             id: req.params.id
         }

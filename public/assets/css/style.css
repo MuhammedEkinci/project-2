@@ -35,3 +35,13 @@ align-self: bottom;
 background-color: lightgray;
 
 }
+p {
+    font-size: xx-small;
+}
+
+.meme-display {
+    width: 100px;
+    height: 100px;
+}
+
+
