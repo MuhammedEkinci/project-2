@@ -1,36 +1,31 @@
-  
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
+
+// Requiring necessary npm packages
 var express = require("express");
 
-// Sets up the Express App
-// =============================================================
-var app = express();
+// Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
-
-// Requiring our models for syncing
 var db = require("./models");
 
-// Sets up the Express app to handle data parsing
+// Creating express app and configuring middleware needed for authentication
+var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Static directory
 app.use(express.static("public"));
 
-// Routes
-// =============================================================
-require("./routes/html-routes.js")(app);
-require("./routes/meme-like-routes.js")(app);
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-// Syncing our sequelize models and then starting our Express app
-// =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+//require("./routes/user-api-routes.js")(app);
+require("./routes/meme-like-routes.js")(app);
+//require("./routes/create-meme-routes")(app);
+
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
+    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
