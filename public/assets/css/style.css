@@ -8,3 +8,30 @@
     text-align: center;
     justify-content: center;
 }
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    transition: background-color 0.2s ease-in-out,
+                transform 0.2s ease-in-out,
+                opacity 0.2s ease-in-out;
+    background-color: var(--navbar-text-color);
+}
+#image-holder {
+    align-self: bottom;
+    align-items: horizontal;
+border-color: purple;
+border-width: 25px;
+width: 60%;
+height: 80%;
+padding-top: 15%;
+margin: 0 auto;
+
+}
+
+.container .container {
+align-self: bottom;
+background-color: lightgray;
+
+}
