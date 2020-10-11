@@ -1,4 +1,13 @@
 $(document).ready(function() {
+
+    //get the jquery info that we need
+    var topInput = $("#top-text");
+    var bottomInput = $("#bottom-text");
+    var titleInput = $("#title-meme");
+    var memeForm = $("#meme-form");
+    var creatorSelect = $("#meme-creator");
+
+
     let memeURL = "https://api.imgflip.com/get_memes";
 
     fetch(memeURL)
