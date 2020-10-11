@@ -16,13 +16,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         bottomText: {
             type: DataTypes.STRING
-        },
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len:[1]
-            }
         }
     });
 
