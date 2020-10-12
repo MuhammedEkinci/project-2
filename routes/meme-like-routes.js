@@ -11,7 +11,7 @@ module.exports = function(app) {
 
         db.LikedMemes.findAll({
             where: query,
-            include: [db.Users]
+            include: [db.User]
         }).then(function(dbLiked) {
             res.json(dbLiked);
         })

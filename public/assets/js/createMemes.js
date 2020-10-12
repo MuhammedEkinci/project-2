@@ -36,8 +36,10 @@ $(document).ready(function() {
     var topInput = $("#top-text");
     var bottomInput = $("#bottom-text");
     var titleInput = $("#title-meme");
-    var memeForm = $("#meme-form");
+    var memeForm = $("#meme");
     var creatorSelect = $("#meme-creator");
+    //will store the memeURL here
+    var memeLink;
 
     // Adding an event listener for when the form is submitted
     $(memeForm).on("submit", handleFormSubmit);  
@@ -59,14 +61,10 @@ $(document).ready(function() {
     else if(url.indexOf("?creator_id=") !== -1) {
         creatorId = url.split("=")[1];
     }
-    
-    //will store the memeURL here
-    var memeLink;
 
     //when img is clicked console.log the url to image
     $(document).on('click','.meme-img', function() {
          memeLink = $(this).attr("data-url");
-        console.log(memeLink);
     });
 
     // Getting the authors, and their posts
@@ -75,6 +73,8 @@ $(document).ready(function() {
     // A function for handling what happens when the form to create a new meme is submitted
     function handleFormSubmit(event) {
         event.preventDefault();
+        console.log("pressed!");
+        console.log(memeLink);
 
         // Wont submit the meme if we are missing a top-text, bottom-text, title, or memeCreator
         if(!titleInput.val().trim() || !topInput.val().trim() || !bottomInput.val().trim() || !creatorSelect.val().trim()) {

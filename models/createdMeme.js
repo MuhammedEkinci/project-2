@@ -12,10 +12,10 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         },
         topText: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         },
         bottomText: {
-            type: DataTypes.STRING
+            type: DataTypes.TEXT
         }
     });
 
