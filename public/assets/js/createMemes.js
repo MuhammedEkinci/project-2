@@ -86,16 +86,14 @@ $(document).ready(function() {
              title: titleInput
                 .val()
                 .trim(),
-            meme: memeLink
-                .val()
-                .trim(),
+            meme: memeLink,
             topText: topInput
                 .val()
                 .trim(),
             bottomText: bottomInput
                 .val()
                 .trim(),
-            CreatorId: creatorSelect.val()
+            UserId: creatorSelect.val()
          };
 
          // If we're updating a post run updatePost to update a post
