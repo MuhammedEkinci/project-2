@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Express</title>
+  <title>MemePost</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
@@ -21,7 +21,7 @@
                             <a class="nav-link " href="memes">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="create" onclick="getMemeIMG()">Create Meme</a>
+                            <a class="nav-link" href="create">Create Meme</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="liked">Liked Meme</a>
@@ -31,6 +31,38 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row mt-4">
+            <div class="row">
+                <div class="memer-container">
+                    <h1>Memers</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Memer</th>
+                                <th># of Memes</th>
+                                <th>See Memer's Posts</th>
+                                <th>New Meme</th>
+                                <th>Delete Memer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="form-row">
+                                <form id="memer-form">
+                                    <td colspan="4">
+                                        <input placeholder="Enter a name" id="memer-name" type="text" />
+                                    </td>
+                                    <td>
+                                        <button type="submit" class="btn btn-success">Create Memer</button>
+                                    </td>
+                                </form>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

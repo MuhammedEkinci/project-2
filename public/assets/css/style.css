@@ -24,20 +24,57 @@ a {
                 opacity 0.2s ease-in-out;
     background-color: var(--navbar-text-color);
 }
+<<<<<<< HEAD
+=======
+#image-holder {
+    align-self: bottom;
+    align-items: horizontal;
+border-color: purple;
+border-width: 25px;
+width: 60%;
+height: 80%;
+padding-top: 15%;
+margin: 0 auto;
 
-.container .container {
+}
+>>>>>>> master
+
+ .container {
 align-self: bottom;
 background-color: lightgray;
 
 }
 p {
     font-size: xx-small;
+
+}
+button.submit {
+    float: right;
 }
 
+form #memer-form {
+    margin-top: 50px;
+}
+
+.create-header button.delete,
+button.edit, button.like {
+    float: right;
+    margin: 5px;
+}
+
+.meme-container {
+    margin-top: 30px;
+}
+
+<<<<<<< HEAD
 .meme-display {
     padding: 10px;
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
+=======
+.hidden {
+    display: none;
+>>>>>>> master
 }
 

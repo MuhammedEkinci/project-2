@@ -11,7 +11,7 @@ module.exports = function(app) {
 
         db.LikedMemes.findAll({
             where: query,
-            include: [db.Users]
+            include: [db.User]
         }).then(function(dbLiked) {
             res.json(dbLiked);
         })
@@ -30,7 +30,7 @@ module.exports = function(app) {
     });
 
       //POST route for saving a new Liked Meme
-      app.post("/api/likedMeme", function(req, res) {
+      app.post("/api/likedMemes", function(req, res) {
         db.LikedMemes.create(req.body).then(function(dbLiked) {
             res.json(dbLiked);
         });

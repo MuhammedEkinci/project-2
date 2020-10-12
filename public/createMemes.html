@@ -3,25 +3,17 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Blog - Express</title>
+  <title>MemePost</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css" media="screen" title="no title">
+  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-  <script>
-      $(document).ready(function() {
-        function doSomething() {
-            console.log("did something");       
-        }
-      });
-  </script>
 </head>
 
 <body>
     <!--navbar-->
-    <div class="container meme">
+    <div class="container meme hidden">
         <div class="row">
             <div class="col-lg-12">
                 <nav class="navbar navbar-light bg-light">
@@ -30,7 +22,11 @@
                             <a class="nav-link " href="memes">Home</a>
                         </li>
                         <li class="nav-item">
+<<<<<<< HEAD
                             <a class="nav-link" href="create" onclick="getMemeIMG().append">Create Meme</a>
+=======
+                            <a class="nav-link" href="create">Create Meme</a>
+>>>>>>> master
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/likeMemes.html">Liked Meme</a>
@@ -46,17 +42,55 @@
 
 
 
+<<<<<<< HEAD
         <!--Will display the meme options-->
         <div class="row">
             <h2></h2>
             <div class="row">
                 <div class="meme-choices offset-md-2">
+=======
+        <div id="meme-display">
+            <!--Will display the meme options-->
+            <div class="row " id="meme-post">
+                <h2>Choose a meme:</h2>
+                <div class="row">
+                    <div class="meme-choices">
 
+                    </div>
+                </div>
+>>>>>>> master
+
+                <!--Form that holds all the meme info-->
+                <div class="row">
+                    <form id="meme">
+                        <div class="form-group">
+                            <label for="title">Meme Title:</label>
+                            <input type="text" class="form-control" id="title-meme" placeholder="Give you're meme a title!">
+                            <br />
+                            <label for="text">Top Text:</label>
+                            <input type="text" class="form-control" id="top-text" placeholder="Top text of meme!">
+                            <br />
+                            <label for="text">Bottom Text:</label>
+                            <input type="text" class="form-control" id="bottom-text" placeholder="Bottom text of meme!">
+                            <br />
+                            <div class="form-group">
+                                <label for="category">Select Meme Creator:</label>
+                                <select class="custom-select" id="meme-creator">
+                            </select>
+                            </div>
+                            <br />
+                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> master
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
     <script src="/assets/js/createMemes.js" type="text/javascript"></script>
