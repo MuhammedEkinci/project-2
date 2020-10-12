@@ -3,8 +3,8 @@ var db = require("../models");
 module.exports = function(app) {
     app.get("/api/posts", function(req, res) {
         var query = {};
-        if(req.query.user_id) {
-            query.UserID = req.query.user_id;
+        if(req.query.creator_id) {
+            query.CreatorId = req.query.creator_id;
         }
 
         db.CreatedMeme.findAll({
@@ -17,7 +17,7 @@ module.exports = function(app) {
     });
 
     app.get("/api/posts/:id", function(req, res) {
-        db.CreatedMeme.fincdOne({
+        db.CreatedMeme.findOne({
             where: {
                 id: req.params.id
             },
@@ -41,7 +41,7 @@ module.exports = function(app) {
         req.body,
         {
             where: {
-            id: req.body.id
+                id: req.body.id
             }
         }).then(function(dbPost) {
             res.json(dbPost);
