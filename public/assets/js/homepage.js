@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
     // blogContainer holds all of our posts
     var memeContainer = $(".meme-container");
@@ -55,16 +56,17 @@ $(document).ready(function() {
     function initializeRows() {
         memeContainer.empty();
         var memeToAdd = [];
-        for(var i = 0; i < memes.lenght; i++) {
+        for(var i = 0; i < memes.length; i++) {
             memeToAdd.push(createNewRow(memes[i]));
         }
         memeContainer.append(memeToAdd);
+        console.log(memeToAdd);
     }
 
     // This function constructs a meme's HTML
     function createNewRow(memes) {
         //get the date of when the meme was posted
-        var formattedDate = new Date(post.createdAt);
+        var formattedDate = new Date(memes.createdAt);
         formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
 
         //<div> that will hold the posted memes
@@ -110,7 +112,8 @@ $(document).ready(function() {
         //meme img
         var newMemeImg = $("<img>");
         newMemeImg.addClass("card-img-top");
-        newMemeImg.attr("src", memes.CreatedMeme.meme);
+        newMemeImg.attr("src", memes.meme);
+        console.log(memes);
 
         //the card body for meme
         var newMemeCardBody = $("<div>");

@@ -1,10 +1,23 @@
-p {
-    font-size: xx-small;
+button.submit {
+    float: right;
 }
 
-.meme-display {
-    width: 100px;
-    height: 100px;
+form #memer-form {
+    margin-top: 50px;
+}
+
+.create-header button.delete,
+button.edit, button.like {
+    float: right;
+    margin: 5px;
+}
+
+.meme-container {
+    margin-top: 30px;
+}
+
+.hidden {
+    display: none;
 }
 
 
