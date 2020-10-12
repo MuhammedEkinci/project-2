@@ -10,20 +10,17 @@ $(document).ready(function() {
 
       const memes = json.data.memes;
   
-      for(var i = 0; i < 30; i++) {
+      for(var i = 0; i < 80; i++) {
         //stores all memes retrieved form API
         var popMemesDiv = $("<a class = 'meme-display col-lg-2' >");
-  
-  
         //get meme img from API
         var memeIMG = json.data.memes[i].url;
         console.log(memeIMG);
   
         //creates div to store memesIMG
-        var img = $("<img>").addClass("meme-img").attr("src", memeIMG).width(100).height(100);
+        var img = $("<img>").addClass("meme-img").attr("src", memeIMG).width(180).height(180);
         popMemesDiv.append(img);
-  
-  
+        $("img").css("padding","9px");
         //prepend to memes div
         $(".meme-choices").prepend(popMemesDiv);
       }
@@ -31,6 +28,15 @@ $(document).ready(function() {
     .catch(error => console.log(error));
 
     function doSomething() {
-        console.log("message");
+    //$(this).appendTo('#like-images')
+    //    console.log('anythiing')
+     
+
+
+
+
+        })
+      
     }
+
   });

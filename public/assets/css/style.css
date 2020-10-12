@@ -1,3 +1,8 @@
+
+a {
+    font-weight: 900;
+    font-size: 24px;
+}
 #web-title {
     color: black;
    text-align: center;
@@ -9,6 +14,7 @@
     justify-content: center;
 }
 .icon-bar {
+
     display: block;
     width: 25px;
     height: 4px;
@@ -17,17 +23,6 @@
                 transform 0.2s ease-in-out,
                 opacity 0.2s ease-in-out;
     background-color: var(--navbar-text-color);
-}
-#image-holder {
-    align-self: bottom;
-    align-items: horizontal;
-border-color: purple;
-border-width: 25px;
-width: 60%;
-height: 80%;
-padding-top: 15%;
-margin: 0 auto;
-text-align: ;
 }
 
 .container .container {
@@ -40,8 +35,9 @@ p {
 }
 
 .meme-display {
-    width: 100px;
-    height: 100px;
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
 }
-
 

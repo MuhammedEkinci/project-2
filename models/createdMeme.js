@@ -25,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     });
-
+    
     //the created meme is linked with the User that made the meme
     CreatedMeme.associate = function(models) {
         CreatedMeme.belongsTo(models.User, {

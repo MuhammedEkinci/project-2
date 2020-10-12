@@ -30,10 +30,10 @@
                             <a class="nav-link " href="memes">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="create" onclick="getMemeIMG()">Create Meme</a>
+                            <a class="nav-link" href="create" onclick="getMemeIMG().append">Create Meme</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="liked">Liked Meme</a>
+                            <a class="nav-link" href="/likeMemes.html">Liked Meme</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="users">Meme Creators</a>
@@ -48,21 +48,19 @@
 
         <!--Will display the meme options-->
         <div class="row">
-            <h2>Choose a meme:</h2>
+            <h2></h2>
             <div class="row">
-                <div class="meme-choices">
+                <div class="meme-choices offset-md-2">
 
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
+    
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js" type="text/javascript"></script>
     <script src="/assets/js/createMemes.js" type="text/javascript"></script>
+   
 
 </body>
 
