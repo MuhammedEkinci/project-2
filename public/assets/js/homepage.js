@@ -84,9 +84,9 @@ $(document).ready(function() {
         deleteBtn.addClass("delete btn btn-danger");
 
         //edit button
-        var editBtn = $("<button>");
-        editBtn.text("EDIT");
-        editBtn.addClass("edit btn btn-info");
+        // var editBtn = $("<button>");
+        // editBtn.text("EDIT");
+        // editBtn.addClass("edit btn btn-info");
 
         //like button
         var likeBtn = $("<button><i class='far fa-thumbs-up'></i>");
@@ -105,14 +105,14 @@ $(document).ready(function() {
         newMemeCreator.text("Memer: " + memes.User.username);
         newMemeCreator.css({
             float: "right",
-            color: "blue",
+            color: "green",
             "margin-top": 
             "-10px"
         });
 
         //meme img
         var newMemeImg = $("<img>");
-        newMemeImg.addClass("card-img-top");
+        newMemeImg.addClass("card-img-top post-img");
         newMemeImg.attr("src", memes.meme);
         console.log(memes);
 
@@ -125,25 +125,33 @@ $(document).ready(function() {
         newMemeTopText.addClass("top-text");
         newMemeTopText.text(memes.topText);
 
+        var topMemeTextDiv = $("<div>");
+        topMemeTextDiv.addClass("text-block-top");
+        topMemeTextDiv.append(newMemeTopText);
+
         //meme bottom text
         var newMemeBottomText = $("<p>");
         newMemeBottomText.addClass("bottom-text");
         newMemeBottomText.text(memes.bottomText);
+
+        var bottomMemeTextDiv = $("<div>");
+        bottomMemeTextDiv.addClass("text-block-bottom");
+        bottomMemeTextDiv.append(newMemeBottomText);
 
         //append all the html
         newMemeTitle.append(newMemeDate);
 
         //meme card heading
         newPostCardHeading.append(deleteBtn);
-        newPostCardHeading.append(editBtn);
+        //newPostCardHeading.append(editBtn);
         newPostCardHeading.append(likeBtn);
         newPostCardHeading.append(newMemeTitle);
         newPostCardHeading.append(newMemeCreator);
 
         //meme card body
-        newMemeCardBody.append(newMemeTopText);
         newMemeCardBody.append(newMemeImg);
-        newMemeCardBody.append(newMemeBottomText);
+        newMemeCardBody.append(topMemeTextDiv);
+        newMemeCardBody.append(bottomMemeTextDiv);
 
         //append everything to main div newPostCard
         newPostCard.append(newPostCardHeading);

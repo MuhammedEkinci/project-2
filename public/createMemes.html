@@ -6,42 +6,39 @@
   <title>MemePost</title>
   <!-- Latest compiled and minified CSS & JS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0/flatly/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css" media="screen" title="no title">
+  <link rel="stylesheet" href="./assets/css/style.css" media="screen" title="no title">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <!--navbar-->
-    <div class="container meme hidden">
-        <div class="row">
-            <div class="col-lg-12">
-                <nav class="navbar navbar-light bg-light">
-                    <ul class="nav nav-pills nav-fill">
-                        <li class="nav-item">
-                            <a class="nav-link " href="memes">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="create">Create Meme</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="liked">Liked Meme</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="users">Meme Creators</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <nav class="navbar navbar-light bg-light web-nav">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link " href="memes">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create">Create Meme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="liked">Liked Meme</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="users">Meme Creators</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <!--navbar end-->
-
-
-
-        <div id="meme-display">
+    </div>
+    <!--navbar end-->
+    <div class="container meme hidden">
+        <div id="meme-display-container">
             <!--Will display the meme options-->
             <div class="row " id="meme-post">
-                <h2>Choose a meme:</h2>
+                <h2 id="choose-meme">Choose a meme:</h2>
                 <div class="row">
                     <div class="meme-choices">
 
@@ -67,7 +64,7 @@
                             </select>
                             </div>
                             <br />
-                            <button type="submit" class="btn btn-primary submit">Submit</button>
+                            <button type="submit" class="btn btn-success submit">Submit</button>
                         </div>
                     </form>
                 </div>

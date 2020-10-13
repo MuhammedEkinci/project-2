@@ -6,7 +6,7 @@ $(document).ready(function() {
     .then(json => {
       console.log(json);
         
-        for(var i = 0; i < 30; i++) {
+        for(var i = 0; i < 100; i++) {
 
             //stores all memes retrieved form API
             var popMemesDiv = $("<a class = 'meme-display col-lg-2'>");
@@ -38,6 +38,7 @@ $(document).ready(function() {
     var titleInput = $("#title-meme");
     var memeForm = $("#meme");
     var creatorSelect = $("#meme-creator");
+    //var memeChoices = $("meme-choices");
     //will store the memeURL here
     var memeLink;
 
@@ -65,6 +66,7 @@ $(document).ready(function() {
     //when img is clicked console.log the url to image
     $(document).on('click','.meme-img', function() {
          memeLink = $(this).attr("data-url");
+         //memeChoices.addClass("hidden");
     });
 
     // Getting the authors, and their posts
@@ -75,11 +77,12 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("pressed!");
         console.log(memeLink);
+        //memeChoices.removeClass("hidden");
 
         // Wont submit the meme if we are missing a top-text, bottom-text, title, or memeCreator
-        if(!titleInput.val().trim() || !topInput.val().trim() || !bottomInput.val().trim() || !creatorSelect.val().trim()) {
-            return;
-        }
+        // if(!titleInput.val().trim() || !topInput.val().trim() || !bottomInput.val().trim() || !creatorSelect.val().trim()) {
+        //     return;
+        // }
 
         // Constructing a newMeme object to hand to the database
          var newMeme = {
