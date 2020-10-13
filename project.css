@@ -9,3 +9,47 @@
 #meme-canvas{
 width: 300ox;
 }
+/*this is the portion here>
+body{
+background-image: url('wildstyle1.png');
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;
+
+
+
+}
+.outer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0)
+}
+
+.container{
+    postion: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 200vh;
+    background-size: cover; 
+}
+
+
+
+    
+        
+
+
+
+    
+
+
+
+
+
+
+
+
