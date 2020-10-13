@@ -1,4 +1,6 @@
-
+body {
+    background-color: rgb(54, 54, 54);
+}
 
 button.submit {
     float: right;
@@ -32,3 +34,91 @@ button.edit, button.like {
     padding-top: 20px;
 }
 
+.like-btn, .dislike {
+    background-color: orange;
+    color: white;
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 20%;
+    margin-left: 5px;
+}
+
+#meme-display-container {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.meme-choices {
+    padding: 10px;
+    margin: 10px;
+}
+
+.meme-display {
+    padding: 5px;
+    border: 10px;
+}
+
+#meme {
+    margin: 20px;
+}
+
+label {
+    color: white;
+}
+
+.web-nav {
+    width: 100%;
+    background-color: black !important;
+}
+
+#choose-meme {
+    color: white;
+}
+
+.meme-img {
+    margin: 8px;
+    box-shadow: ;
+}
+
+.meme-img:hover {
+    box-shadow: 0 0 5px 2px white
+}
+
+.card-body {
+    position: relative;
+}
+
+.text-block-top {
+    position: absolute;
+    top: 20px;
+    right: 33%;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+}
+
+.text-block-bottom {
+    position: absolute;
+    bottom: 20px;
+    right: 33%;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.meme {
+    margin: 0 auto;
+
+}
+
+#memers-title {
+    color: white;
+}
+
+th {
+    color: white;
+}

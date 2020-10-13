@@ -95,7 +95,7 @@ $(document).ready(function() {
         newMemeCreator.text("Memer: " + memeLiked.User.username);
         newMemeCreator.css({
             float: "right",
-            color: "blue",
+            color: "green",
             "margin-top": 
             "-10px"
         });
@@ -113,9 +113,19 @@ $(document).ready(function() {
          var newMemeTopText = $("<p>");
          newMemeTopText.text(memeLiked.top_Text);
 
+         var topMemeTextDiv = $("<div>");
+         topMemeTextDiv.addClass("text-block-top");
+         topMemeTextDiv.append(newMemeTopText);
+ 
+
         //meme bottom text
         var newMemeBottomText = $("<p>");
         newMemeBottomText.text(memeLiked.bottom_Text);
+
+        var bottomMemeTextDiv = $("<div>");
+        bottomMemeTextDiv.addClass("text-block-bottom");
+        bottomMemeTextDiv.append(newMemeBottomText);
+
 
         //append date to title
         newMemeTite.append(newMemeDate);
@@ -127,9 +137,9 @@ $(document).ready(function() {
         newPostCardHeading.append(newMemeCreator);
 
         //append to meme card body
-        newMemeCardBody.append(newMemeTopText);
         newMemeCardBody.append(newMemeImg);
-        newMemeCardBody.append(newMemeBottomText);
+        newMemeCardBody.append(topMemeTextDiv);
+        newMemeCardBody.append(bottomMemeTextDiv);
 
         //append everything to main div newPostCard
         newPostCard.append(newPostCardHeading);
