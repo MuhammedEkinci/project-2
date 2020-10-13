@@ -1,3 +1,5 @@
+
+
 button.submit {
     float: right;
 }
@@ -13,11 +15,20 @@ button.edit, button.like {
 }
 
 .meme-container {
-    margin-top: 30px;
+    padding-top: 20px;
+    margin: 0 auto;
 }
 
 .hidden {
     display: none;
 }
 
+.card {
+    margin-top: 20px;
+}
+
+.likedMeme-container {
+    margin: 0 auto;
+    padding-top: 20px;
+}
 

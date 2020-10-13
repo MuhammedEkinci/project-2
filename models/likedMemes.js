@@ -1,12 +1,26 @@
-
-
-//creating likedMemes model
-module.exports = function(sequalize, DataTypes) {
-    var LikedMemes = sequalize.define("likedMemes", {
+module.exports = function(sequelize, DataTypes) {
+    var LikedMeme = sequelize.define("LikedMeme", {
+        title: {
+            type: DataTypes.STRING,
+        },
         meme: {
             type: DataTypes.STRING,
-            allowNull: false,
         },
+        top_Text: {
+            type: DataTypes.TEXT
+        },
+        bottom_Text: {
+            type: DataTypes.TEXT
+        }
     });
-    return LikedMemes;
-};
+
+    //the created meme is linked with the User that made the meme
+    LikedMeme.associate = function(models) {
+        LikedMeme.belongsTo(models.User, {
+            foreignKey: {
+                allowNull: false
+            }
+        })
+    }
+    return LikedMeme;
+}
