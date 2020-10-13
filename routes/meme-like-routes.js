@@ -3,13 +3,14 @@ var db = require("../models");
 
 module.exports = function(app) {
 
+    // GET route for getting all of the posts
     app.get("/api/likedMemes", function(req, res) {
         var query = {};
-        if(req.query.user_id) {
-            query.UserId = req.query.user_id;
+        if(req.query.creator_id) {
+            query.CreatorId = req.query.creator_id;
         }
 
-        db.LikedMemes.findAll({
+        db.LikedMeme.findAll({
             where: query,
             include: [db.User]
         }).then(function(dbLiked) {
@@ -17,8 +18,9 @@ module.exports = function(app) {
         })
     });
 
+    // Get route for retrieving a single post
     app.get("/api/likedMemes/:id", function(req, res) {
-        db.LikedMemes.fincdOne({
+        db.LikedMeme.fincdOne({
             where: {
                 id: req.params.id
             },
@@ -31,14 +33,14 @@ module.exports = function(app) {
 
       //POST route for saving a new Liked Meme
       app.post("/api/likedMemes", function(req, res) {
-        db.LikedMemes.create(req.body).then(function(dbLiked) {
+        db.LikedMeme.create(req.body).then(function(dbLiked) {
             res.json(dbLiked);
         });
     });
 
     // DELETE route for deleting liked Memes
     app.delete("/api/likedMemes/:id", function(req, res) {
-        db.LikedMemes.destroy({
+        db.LikedMeme.destroy({
         where: {
             id: req.params.id
         }
@@ -46,5 +48,4 @@ module.exports = function(app) {
             res.json(dbLiked);
         });
     });
-    
 }

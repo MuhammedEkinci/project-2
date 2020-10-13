@@ -1,12 +1,13 @@
 
 $(document).ready(function() {
-    // blogContainer holds all of our posts
+    // memeContainer holds all of our posts
     var memeContainer = $(".meme-container");
     var memeCategorySelect = $("#category");
 
-    // Click events for the edit and delete buttons
+    // Click events for the edit, like, and delete buttons
     $(document).on("click", "button.delete", handleMemeDelete);
     $(document).on("click", "button.edit", handleMemeEdit);
+    $(document).on("click", "button.like-btn", handleMemeLike);
 
     // Variable to hold our memes
     var memes;
@@ -101,7 +102,7 @@ $(document).ready(function() {
 
         //meme username
         var newMemeCreator = $("<h5>");
-        newMemeCreator.text("Made by: " + memes.User.username);
+        newMemeCreator.text("Memer: " + memes.User.username);
         newMemeCreator.css({
             float: "right",
             color: "blue",
@@ -121,10 +122,12 @@ $(document).ready(function() {
 
         //meme top text
         var newMemeTopText = $("<p>");
+        newMemeTopText.addClass("top-text");
         newMemeTopText.text(memes.topText);
 
         //meme bottom text
         var newMemeBottomText = $("<p>");
+        newMemeBottomText.addClass("bottom-text");
         newMemeBottomText.text(memes.bottomText);
 
         //append all the html
@@ -158,11 +161,38 @@ $(document).ready(function() {
 
     // This function figures out which post we want to edit and takes it to the appropriate url
     function handleMemeEdit() {
-        var currentMeme = $(this)
-          .parent()
-          .parent()
-          .data("meme");
-        window.location.href = "/create?creator_id=" + currentMeme.id;
+        var currentMeme = $(this).parent().parent().data("meme");
+
+
+        window.location.href = "/posts?creator_id=" + currentMeme.id;
+        console.log(currentMeme);
+    }
+
+    //function that handles when a meme is liked
+    function handleMemeLike(event) {
+        event.preventDefault();
+        console.log("works!!");
+
+        var currentMeme = $(this).parent().parent().data("meme");
+        console.log(currentMeme);
+
+        //constructing likedMeme object to database
+        var likedMeme = {
+            title: currentMeme.title,
+            meme: currentMeme.meme,
+            top_Text: currentMeme.topText,
+            bottom_Text: currentMeme.bottomText,
+            UserId: currentMeme.UserId
+        };
+
+        submitMeme(likedMeme);
+    }
+
+    //submits a liked meme to and brings them to likedMeme page upon like
+    function submitMeme(memeLike) {
+        $.post("/api/likedMemes", memeLike, function() {
+            window.location.href = "/liked";
+        });
     }
 
     // This function displays a message when there are no posts
@@ -179,8 +209,4 @@ $(document).ready(function() {
         "'>Meme</a> to join the Dark Side!");
         memeContainer.append(messageH2);
     }
-
-
-
-
 });

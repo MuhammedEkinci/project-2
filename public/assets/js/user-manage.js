@@ -49,7 +49,7 @@ $(document).ready(function() {
         }
         newTr.append("<td><a href = '/memes?creator_id=" + memerData.id + "'>Go To Memes</a></td>");
         newTr.append("<td><a href= '/users?creator_id=" + memerData.id + "'>Create a Meme</a></td>");
-        newTr.append("<td><a stlye= 'cursor:pointer;color:red' class = 'delete-memer'>Delete Memer</a></td>");
+        newTr.append("<td><a stlye='cursor:pointer; color:red' class = 'delete-memer'>Delete Memer</a></td>");
         return newTr;
     }
 
@@ -89,6 +89,7 @@ $(document).ready(function() {
     // Function for handling what happens when the delete button is pressed
     function handleDeleteButtonPress() {
         var listItemData = $(this).parent("td").parent("tr").data("memer");
+        console.log(listItemData);
         var id = listItemData.id;
         $.ajax({
             method: "DELETE",
