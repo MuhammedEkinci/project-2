@@ -66,6 +66,8 @@ $(document).ready(function() {
     //when img is clicked console.log the url to image
     $(document).on('click','.meme-img', function() {
          memeLink = $(this).attr("data-url");
+         $(this).css("box-shadow", "0 0 5px 2px red");
+         console.log("clicked!1");
          //memeChoices.addClass("hidden");
     });
 

@@ -67,12 +67,12 @@ $(document).ready(function() {
     // This function constructs a meme's HTML
     function createNewRow(memes) {
         //get the date of when the meme was posted
-        var formattedDate = new Date(memes.createdAt);
-        formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
+        // var formattedDate = new Date(memes.createdAt);
+        // formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
 
         //<div> that will hold the posted memes
         var newPostCard = $("<div>");
-        newPostCard.addClass("card");
+        newPostCard.addClass("card meme-card");
 
         //the heading of the card
         var newPostCardHeading = $("<div>");
@@ -96,9 +96,9 @@ $(document).ready(function() {
         var newMemeTitle = $("<h2>");
         newMemeTitle.text(memes.title + " ");
 
-        //meme date
-        var newMemeDate = $("<small>");
-        newMemeDate.text(formattedDate);
+        // //meme date
+        // var newMemeDate = $("<small>");
+        // newMemeDate.text("Posted:"  + formattedDate);
 
         //meme username
         var newMemeCreator = $("<h5>");
@@ -139,7 +139,7 @@ $(document).ready(function() {
         bottomMemeTextDiv.append(newMemeBottomText);
 
         //append all the html
-        newMemeTitle.append(newMemeDate);
+        //newMemeTitle.append(newMemeDate);
 
         //meme card heading
         newPostCardHeading.append(deleteBtn);
