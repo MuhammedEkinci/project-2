@@ -70,6 +70,7 @@ label {
 .web-nav {
     width: 100%;
     background-color: black !important;
+
 }
 
 #choose-meme {
@@ -78,11 +79,10 @@ label {
 
 .meme-img {
     margin: 8px;
-    box-shadow: ;
 }
 
 .meme-img:hover {
-    box-shadow: 0 0 5px 2px white
+    box-shadow: 0 0 5px 2px white;
 }
 
 .card-body {
@@ -121,4 +121,13 @@ label {
 
 th {
     color: white;
+}
+
+.memer-container {
+    margin: 0 auto;
+    background-color: grey;
+}
+
+.meme-card:hover {
+    box-shadow: 0 0 5px 2px white;
 }
