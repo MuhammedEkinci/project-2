@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let memeURL = "https://api.imgflip.com/get_memes";
+    let memeURL="https://api.imgflip.com/get_memes";
 
     fetch(memeURL)
     .then(data => data.json())

@@ -1,21 +1,35 @@
 
 // Requiring necessary npm packages
+var compression = require("compression");
 var express = require("express");
+
+var app = express();
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3000;
 var db = require("./models");
 
+app.use(compression({ filter: shouldCompress }))
+ 
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false
+  }
+ 
+  // fallback to standard filter function
+  return compression.filter(req, res)
+}
+
 // Creating express app and configuring middleware needed for authentication
-var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
 // Set Handlebars.
-var exphbs = require("express-handlebars");
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// var exphbs = require("express-handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
